@@ -1,0 +1,9 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+#mapid {
+    width: 100vw;
+    height: calc(100vh - 56px);
+}
