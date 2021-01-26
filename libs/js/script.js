@@ -6,3 +6,22 @@ function getMap() {
     }).addTo(map);
 
 }
+function getCountryBorders(){
+    console.log();
+    $.ajax({
+        
+        url: "libs/php/script.php",
+        type: 'POST',
+        dataType: 'JSON',
+
+    success: function(result) {
+        console.log('success');
+        
+        console.log(result);
+    },
+    error: function(jqXHR, textStatus, errorThrown){
+        console.log('error');
+        console.log(jqXHR, textStatus, errorThrown)
+    }
+    });
+}
