@@ -14,14 +14,14 @@ function getCountryBorders(){
         type: 'POST',
         dataType: 'JSON',
 
-    success: function(result) {
-        console.log('success');
-        
-        console.log(result);
-    },
-    error: function(jqXHR, textStatus, errorThrown){
-        console.log('error');
-        console.log(jqXHR, textStatus, errorThrown)
-    }
+        success: function(result) {
+            console.log('success');
+            
+            console.log(result);
+        },
+        error: function(jqXHR, textStatus, errorThrown){
+            console.log('error');
+            console.log(jqXHR, textStatus, errorThrown)
+        }
     });
 }
