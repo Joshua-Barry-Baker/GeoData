@@ -8,10 +8,12 @@ function getMap(lat, lng) {
     function onMapClick(e) {
 
         console.log(e.latlng);
+        getCountryData(e.latlng['lat'], e.latlng['lng']);
     };
     //adds the onclick lisserner
     map.on('click', onMapClick);
 }
+
 function getCountryData(lat, lng){
     console.log();
     $.ajax({
