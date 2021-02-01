@@ -9,7 +9,8 @@ $eta=-hrtime(true); //start time
 //API's using ISO A2
 $nodes = array(
     //Geonames
-    'http://api.geonames.org/earthquakesJSON?north=' . $_REQUEST['northEastLat'] . '&south=' . $_REQUEST['southWestLat'] . '&east=' . $_REQUEST['northEastLng'] . '&west=' . $_REQUEST['northEastLat'] . '&username=' . $apiKey['geonames']
+    'http://api.geonames.org/earthquakesJSON?north=' . $_REQUEST['northEastLat'] . '&south=' . $_REQUEST['southWestLat'] . '&east=' . $_REQUEST['northEastLng'] . '&west=' . $_REQUEST['northEastLat'] . '&username=' . $apiKey['geonames'],
+    'http://api.geonames.org/neighboursJSON?country=' . $_REQUEST['isoA2'] . '&username=' . $apiKey['geonames']
 );
 
 $node_count = count($nodes);

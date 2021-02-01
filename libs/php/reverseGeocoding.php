@@ -13,7 +13,7 @@ $nodes = array(
     //OpenWeather
     'https://api.openweathermap.org/data/2.5/onecall?lat=' . $_REQUEST['lat'] . '&lon=' . $_REQUEST['lng'] . '&units=metric&appid=' . $apiKey['openWeatherMap'],
     //Geonames
-    'http://api.geonames.org/findNearbyWikipediaJSON?lat=' . $_REQUEST['lat'] . '&lng=' . $_REQUEST['lng'] . '&username=' . $apiKey['geonames']
+    'http://api.geonames.org/findNearbyWikipediaJSON?lat=' . $_REQUEST['lat'] . '&lng=' . $_REQUEST['lng'] . '&username=' . $apiKey['geonames'],
 );
 
 $node_count = count($nodes);
