@@ -10,7 +10,11 @@ $eta=-hrtime(true); //start time
 $nodes = array(
     //Geonames
     'http://api.geonames.org/earthquakesJSON?north=' . $_REQUEST['northEastLat'] . '&south=' . $_REQUEST['southWestLat'] . '&east=' . $_REQUEST['northEastLng'] . '&west=' . $_REQUEST['northEastLat'] . '&username=' . $apiKey['geonames'],
-    'http://api.geonames.org/neighboursJSON?country=' . $_REQUEST['isoA2'] . '&username=' . $apiKey['geonames']
+    'http://api.geonames.org/neighboursJSON?country=' . $_REQUEST['isoA2'] . '&username=' . $apiKey['geonames'],
+    //RestCountries
+    'https://restcountries.eu/rest/v2/alpha/'. $_REQUEST['isoA2'],
+    //OpenExchangeRates (OXR)
+    'https://openexchangerates.org/api/latest.json?app_id=' . $apiKey['oxr']
 );
 
 $node_count = count($nodes);
