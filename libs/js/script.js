@@ -28,8 +28,14 @@ function getCountryData(lat, lng){
 
         success: function(result) {
             console.log('success');
-            
             console.log(result);
+            //n^2 brute search
+            for(let i=0; i < result.borders.features.length; i++){
+                if(result.borders.features[i].properties.iso_a2 == result.dataReverse[0].results[0].components["ISO_3166-1_alpha-2"]){
+                    console.log(`found border, key${i}`);
+                    break;
+                }
+            }
         },
         error: function(jqXHR, textStatus, errorThrown){
             console.log('error');
