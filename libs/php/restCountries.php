@@ -1,18 +1,10 @@
 <?php
 
-require('../../keys/keys.php');
-
-$countryBordersGeoJSON = json_decode(file_get_contents("../bin/countryBorders.geo.json"));
-
-
 $eta=-hrtime(true); //start time
 //API's using ISO A2
 $nodes = array(
-    //Geonames
-    'http://api.geonames.org/earthquakesJSON?north=' . $_REQUEST['northEastLat'] . '&south=' . $_REQUEST['southWestLat'] . '&east=' . $_REQUEST['northEastLng'] . '&west=' . $_REQUEST['northEastLat'] . '&username=' . $apiKey['geonames'],
-    'http://api.geonames.org/neighboursJSON?country=' . $_REQUEST['isoA2'] . '&username=' . $apiKey['geonames'],
-    //OpenExchangeRates (OXR)
-    'https://openexchangerates.org/api/latest.json?app_id=' . $apiKey['oxr']
+    //RestCountries
+    'https://restcountries.eu/rest/v2/alpha/'. $_REQUEST['isoA2']
 );
 
 $node_count = count($nodes);
@@ -42,8 +34,8 @@ for($i = 0; $i < $node_count; $i++)
 };
 
 $eta1 = $eta + hrtime(true); //How long it took to geocode
-$output['status']['returnedIn']['geocode']=$eta1/1e+6 . 'ms';
-$output['dataGeocoding'] = $results; //All geocoding API data done
+$output['status']['returnedIn']['restCountries']=$eta1/1e+6 . 'ms';
+$output['restCountries'] = $results; //All geocoding API data done
 
 //Find ISO A2 from features in geoJSON
 
