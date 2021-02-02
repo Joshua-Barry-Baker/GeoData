@@ -12,7 +12,9 @@ $nodes = array(
     'http://api.geonames.org/earthquakesJSON?north=' . $_REQUEST['northEastLat'] . '&south=' . $_REQUEST['southWestLat'] . '&east=' . $_REQUEST['northEastLng'] . '&west=' . $_REQUEST['northEastLat'] . '&username=' . $apiKey['geonames'],
     'http://api.geonames.org/neighboursJSON?country=' . $_REQUEST['isoA2'] . '&username=' . $apiKey['geonames'],
     //OpenExchangeRates (OXR)
-    'https://openexchangerates.org/api/latest.json?app_id=' . $apiKey['oxr']
+    'https://openexchangerates.org/api/latest.json?app_id=' . $apiKey['oxr'],
+    //ExchangeRatesAPI
+    'https://api.exchangeratesapi.io/latest?base=USD'
 );
 
 $node_count = count($nodes);

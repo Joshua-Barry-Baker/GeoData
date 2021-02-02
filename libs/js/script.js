@@ -76,6 +76,7 @@ function getCountryData(lat, lng){
                                 data: {
                                     isoA2: result.borders.features[i].properties.iso_a2,
                                     borders: result.borders.features[i],
+                                    currency: data.restCountries.restCountries[0].currencies[0].code,
                                     northEastLat: result.dataReverse[0].results[0].bounds.northeast.lat,
                                     northEastLng: result.dataReverse[0].results[0].bounds.northeast.lng,
                                     southWestLat: result.dataReverse[0].results[0].bounds.southwest.lat,
