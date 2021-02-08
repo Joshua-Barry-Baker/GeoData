@@ -106,3 +106,12 @@ function getMap(lat, lng) {
         });
     } //End getCountryData
 } //End getMap
+
+function getEarthquakes(data){
+    let pins = [];
+    for(let i = 0; i < data.geocoding.dataGeocoding[0].earthquakes.length; i++) {
+        pins.push(L.marker([data.geocoding.dataGeocoding[0].earthquakes[i].lng,data.geocoding.dataGeocoding[0].earthquakes[i].lat])
+        .bindPopup(`magnitude ${data.geocoding.dataGeocoding[0].earthquakes[i].magnitude} on ${data.geocoding.dataGeocoding[0].earthquakes[i].datetime}`));
+    }
+    return pins;
+}
