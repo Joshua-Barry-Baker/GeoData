@@ -12,6 +12,7 @@ function getMap(lat, lng) {
     };
     //adds the onclick lisserner
     map.on('click', onMapClick);
+    return map;
 }
 
 function getCountryData(lat, lng){
@@ -107,4 +108,5 @@ function getCountryData(lat, lng){
             console.log(jqXHR, textStatus, errorThrown)
         }
     });
+    return data;
 }
