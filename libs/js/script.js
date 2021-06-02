@@ -29,7 +29,7 @@ function getCountryData(lat, lng){
 
         success: function(result) {
             data.reverseGeocoding = result;
-            console.log(data);
+            //console.log(data);
             //n^2 brute search
             for(let i=0; i < result.borders.features.length; i++){
                 if(result.borders.features[i].properties.iso_a2 == result.dataReverse[0].results[0].components["ISO_3166-1_alpha-2"]){
@@ -68,7 +68,7 @@ function getCountryData(lat, lng){
         
                         success: function(restCountries) {
                             data.restCountries = restCountries;
-                            console.log(data);
+                            //console.log(data);
                             $.ajax({ //gets geocoding APIs
 
                                 url: "libs/php/Geocoding.php",
@@ -86,7 +86,7 @@ function getCountryData(lat, lng){
                 
                                 success: function(geocoding) {
                                     data.geocoding = geocoding;
-                                    console.log(data);
+                                    //console.log(data);
                                 },
                                 error: function(jqXHR, textStatus, errorThrown){
                                     console.log('error');
@@ -108,5 +108,6 @@ function getCountryData(lat, lng){
             console.log(jqXHR, textStatus, errorThrown)
         }
     });
+    console.log(data);
     return data;
 }
