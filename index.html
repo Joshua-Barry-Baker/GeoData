@@ -38,27 +38,26 @@
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
         <!-- Brand -->
         <a class="navbar-brand" href="">GeoData</a>
-    
-        <!-- Toggler/collapsibe Button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
 
         <!-- Navbar links -->
         <div class="dropdown">
-            <button onclick="dropdown()" class="dropdown">Find Country</button>
+            <button onclick="dropdown()" class="dropdown navbar-brand" id="dropdownBtn">FindCountry</button>
             <div id="dropdown" class="dropdown-content">
-              <input type="text" placeholder="Search.." id="dropdownInput" onkeyup="dropdownFilter()">
-              <a href="#about">About</a>
-              <a href="#base">Base</a>
-              <a href="#blog">Blog</a>
-              <a href="#contact">Contact</a>
-              <a href="#custom">Custom</a>
-              <a href="#support">Support</a>
-              <a href="#tools">Tools</a>
+                <input type="text" placeholder="Search.." id="dropdownInput" onkeyup="dropdownFilter()">
+                <a href="#about">About</a>
+                <a href="#base">Base</a>
+                <a href="#blog">Blog</a>
+                <a href="#contact">Contact</a>
+                <a href="#custom">Custom</a>
+                <a href="#support">Support</a>
+                <a href="#tools">Tools</a>
             </div>
-          </div>
-          
+        </div>
+
+          <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
     </nav>
     
     <div id="mapid"></div>
