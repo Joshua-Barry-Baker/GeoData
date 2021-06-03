@@ -1,3 +1,23 @@
+//Dropdown
+function dropdown() {
+    document.getElementById('dropdown').classList.toggle('show');
+}
+function dropdownFilter() {
+    var input, filter, a, i;
+    input = document.getElementById('dropdownInput');
+    filter = input.value.toUpperCase();
+    div = document.getElementById('dropdown');
+    a = div.getElementsByTagName('a');
+    for (i = 0; i < a.length; i++) {
+        txtValue = a[i].textContent || a[i].innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            a[i].style.display = '';
+        } else {
+            a[i].style.display = 'none';
+        }
+    }
+}
+//Get Map
 function getMap(lat, lng) {
     var map = L.map('mapid').setView([lat, lng], 7);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
