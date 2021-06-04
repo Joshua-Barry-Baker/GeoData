@@ -17,7 +17,7 @@ function dropdownFilter() {
         }
     }
 }
-//Get Map
+//Displays the map in body > #mapid
 function getMap(lat, lng) {
     var map = L.map('mapid').setView([lat, lng], 7);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -34,7 +34,7 @@ function getMap(lat, lng) {
     map.on('click', onMapClick);
     return map;
 }
-
+//uses lat lng to reverse geocode and geocode, returning the data
 function getCountryData(lat, lng){
     let data = {};
     $.ajax({ //gets reverseGeocoding APIs
@@ -124,10 +124,28 @@ function getCountryData(lat, lng){
             }
         },
         error: function(jqXHR, textStatus, errorThrown){
-            console.log('error');
             console.log(jqXHR, textStatus, errorThrown)
         }
     });
     console.log(data);
     return data;
+}
+function setSearchableLocations(){
+    let data = $.ajax({
+        
+        url: "libs/php/decode.php",
+        type: 'POST',
+        dataType: 'JSON',
+
+        success: function(result) {
+            let text = '';
+            for (let i = 0; i < result.features.length; i++) {
+                text += `<a href="${result.features[0].properties.name}"${result.features[0].properties.name}</a>`
+            }
+            document.getElementById('Searchablelocations').innerHTML(text);
+        }, error: function(jqXHR, textStatus, errorThrown){
+            console.log('error');
+            console.log(jqXHR, textStatus, errorThrown);
+        }
+    });
 }
