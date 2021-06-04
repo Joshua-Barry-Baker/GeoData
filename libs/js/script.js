@@ -139,10 +139,11 @@ function setSearchableLocations(){
 
         success: function(result) {
             let text = '';
+            console.log(result.features.length);
             for (let i = 0; i < result.features.length; i++) {
-                text += `<a href="${result.features[0].properties.name}"${result.features[0].properties.name}</a>`
+                text += `<a href="${result.features[i].properties.name}">${result.features[i].properties.name}</a>`
             }
-            document.getElementById('Searchablelocations').innerHTML(text);
+            document.getElementById('Searchablelocations').innerHTML = text;
         }, error: function(jqXHR, textStatus, errorThrown){
             console.log('error');
             console.log(jqXHR, textStatus, errorThrown);

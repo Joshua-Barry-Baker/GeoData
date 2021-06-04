@@ -44,7 +44,6 @@
             <button onclick="dropdown()" class="dropdown navbar-brand" id="dropdownBtn">FindCountry</button>
             <div id="dropdown" class="dropdown-content">
                 <input type="text" placeholder="Search.." id="dropdownInput" onkeyup="dropdownFilter()">
-                <a href="#about">About</a> <!--Remove this line when script works-->
                 <div id="Searchablelocations"></div>
             </div>
         </div>
@@ -59,6 +58,7 @@
 
     <script>getMap(51, -0.09);</script>
     <script>getCountryData(51, -0.09);</script>
+    <script>setSearchableLocations()</script>
 </body>
 
 </html>

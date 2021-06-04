@@ -50,6 +50,7 @@ button:focus {
     overflow: scroll;
     border: 1px solid #ddd;
     z-index: 11;
+    max-height: 75vh;
 }
 .dropdown-content a {
     color: black;
