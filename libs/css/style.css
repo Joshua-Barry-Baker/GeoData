@@ -3,10 +3,17 @@
     padding: 0px;
     box-sizing: border-box;
 }
+button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+         appearance: none;
+}
 button:focus {
     border: 0;
     padding: 0;
     outline: none;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: -1px;
 }
 #mapid {
     z-index: 1;

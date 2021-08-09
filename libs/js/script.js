@@ -131,15 +131,15 @@ function getCountryData(lat, lng){
     return data;
 }
 function setSearchableLocations(){
-    let data = $.ajax({
+    $.ajax({
         
         url: "libs/php/decode.php",
         type: 'POST',
         dataType: 'JSON',
 
         success: function(result) {
+            console.log(result);
             let text = '';
-            console.log(result.features.length);
             for (let i = 0; i < result.features.length; i++) {
                 text += `<a href="${result.features[i].properties.name}">${result.features[i].properties.name}</a>`
             }
