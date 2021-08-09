@@ -59,13 +59,13 @@ button:focus {
     z-index: 11;
     max-height: 75vh;
 }
-.dropdown-content a {
+.dropdown-content p {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
-.dropdown a:hover {
+.dropdown p:hover {
     background-color: #ddd;
 }
 .show {

@@ -7,7 +7,7 @@ function dropdownFilter() {
     input = document.getElementById('dropdownInput');
     filter = input.value.toUpperCase();
     div = document.getElementById('dropdown');
-    a = div.getElementsByTagName('a');
+    a = div.getElementsByTagName('p');
     for (i = 0; i < a.length; i++) {
         txtValue = a[i].textContent || a[i].innerText;
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
@@ -141,7 +141,7 @@ function setSearchableLocations(){
             console.log(result);
             let text = '';
             for (let i = 0; i < result.features.length; i++) {
-                text += `<a href="${result.features[i].properties.name}">${result.features[i].properties.name}</a>`
+                text += `<p onclick="ShowOnMap(${i})">${result.features[i].properties.name}</p>`
             }
             document.getElementById('Searchablelocations').innerHTML = text;
         }, error: function(jqXHR, textStatus, errorThrown){
