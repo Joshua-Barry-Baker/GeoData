@@ -1,3 +1,23 @@
+//Dropdown
+function dropdown() {
+    document.getElementById('dropdown').classList.toggle('show');
+}
+function dropdownFilter() {
+    var input, filter, a, i;
+    input = document.getElementById('dropdownInput');
+    filter = input.value.toUpperCase();
+    div = document.getElementById('dropdown');
+    a = div.getElementsByTagName('a');
+    for (i = 0; i < a.length; i++) {
+        txtValue = a[i].textContent || a[i].innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            a[i].style.display = '';
+        } else {
+            a[i].style.display = 'none';
+        }
+    }
+}
+//Displays the map in body > #mapid
 function getMap(lat, lng) {
     var map = L.map('mapid').setView([lat, lng], 7);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -14,7 +34,7 @@ function getMap(lat, lng) {
     map.on('click', onMapClick);
     return map;
 }
-
+//uses lat lng to reverse geocode and geocode, returning the data
 function getCountryData(lat, lng){
     let data = {};
     $.ajax({ //gets reverseGeocoding APIs
@@ -104,10 +124,29 @@ function getCountryData(lat, lng){
             }
         },
         error: function(jqXHR, textStatus, errorThrown){
-            console.log('error');
             console.log(jqXHR, textStatus, errorThrown)
         }
     });
     console.log(data);
     return data;
+}
+function setSearchableLocations(){
+    $.ajax({
+        
+        url: "libs/php/decode.php",
+        type: 'POST',
+        dataType: 'JSON',
+
+        success: function(result) {
+            console.log(result);
+            let text = '';
+            for (let i = 0; i < result.features.length; i++) {
+                text += `<a href="${result.features[i].properties.name}">${result.features[i].properties.name}</a>`
+            }
+            document.getElementById('Searchablelocations').innerHTML = text;
+        }, error: function(jqXHR, textStatus, errorThrown){
+            console.log('error');
+            console.log(jqXHR, textStatus, errorThrown);
+        }
+    });
 }

@@ -38,32 +38,27 @@
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
         <!-- Brand -->
         <a class="navbar-brand" href="">GeoData</a>
-    
-        <!-- Toggler/collapsibe Button -->
+
+        <!-- Navbar links -->
+        <div class="dropdown">
+            <button onclick="dropdown()" class="dropdown navbar-brand" id="dropdownBtn">FindCountry</button>
+            <div id="dropdown" class="dropdown-content">
+                <input type="text" placeholder="Search.." id="dropdownInput" onkeyup="dropdownFilter()">
+                <div id="Searchablelocations"></div>
+            </div>
+        </div>
+
+          <!-- Toggler/collapsibe Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
-
-        <!-- Navbar links -->
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#"></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"></a>
-                </li>
-            </ul>
-        </div>
     </nav>
     
     <div id="mapid"></div>
 
     <script>getMap(51, -0.09);</script>
     <script>getCountryData(51, -0.09);</script>
+    <script>setSearchableLocations()</script>
 </body>
 
 </html>
